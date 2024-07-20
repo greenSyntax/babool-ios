@@ -1,0 +1,6 @@
+framework module Pods_babool_Tests {
+  umbrella header "Pods-babool_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Babool {
+  umbrella header "Babool-umbrella.h"
+
+  export *
+  module * { export * }
+}
