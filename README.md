@@ -1,10 +1,5 @@
 # Babool 🌵
 
-[![CI Status](https://img.shields.io/travis/6260612/babool.svg?style=flat)](https://travis-ci.org/6260612/babool)
-[![Version](https://img.shields.io/cocoapods/v/babool.svg?style=flat)](https://cocoapods.org/pods/babool)
-[![License](https://img.shields.io/cocoapods/l/babool.svg?style=flat)](https://cocoapods.org/pods/babool)
-[![Platform](https://img.shields.io/cocoapods/p/babool.svg?style=flat)](https://cocoapods.org/pods/babool)
-
 Babool is a versatile iOS library designed for developers who want to efficiently manage and store development logs. Whether you need to keep logs locally or prefer to utilize cloud storage, Babool provides seamless integration with both local CSV files and Google Sheets.
 
 ## Features
