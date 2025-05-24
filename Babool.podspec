@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Babool'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Dev Logging Tool'
   s.description      = <<-DESC
   Babool is unnessary yet very usefull tool while doing the development, you always need a
