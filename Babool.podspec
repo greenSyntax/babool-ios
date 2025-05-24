@@ -14,10 +14,10 @@ Pod::Spec.new do |s|
   Babool is unnessary yet very usefull tool while doing the development, you always need a
                        DESC
 
-  s.homepage         = 'https://github.com/6260612/babool'
+  s.homepage         = 'https://github.com/greenSyntax/babool-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Abhishek Ravi' => 'ab.abhishek.ravi@gmail.com' }
-  s.source           = { :git => 'https://github.com/6260612/babool.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/greenSyntax/babool-ios', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.source_files = 'babool/Classes/**/*'
   s.dependency 'GoogleSignIn'

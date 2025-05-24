@@ -9,20 +9,21 @@ import Foundation
 
 public struct DefaultPayload: PayloadProtocol {
     public var uuid: String
+    public var type: String
+    public var formattedDate: String
+    public var client: String
     public var title: String
     public var description: String
-    public var category: String
     public var timestamp: Date
     
-    public init(title: String, description: String, category: String) {
+    public init(type: String, title: String, description: String, formattedDate: String, client: String) {
         self.uuid = UUID().uuidString
+        self.type = type
         self.title = title
         self.description = description
-        self.category = category
         self.timestamp = Date()
+        self.formattedDate = formattedDate
+        self.client = client
     }
     
-    public func getCollumnNamedString() -> String {
-        return "\("UID"),\("Title"),\("Description"),\("Category"),\("Timestamp")\n\n"
-    }
 }

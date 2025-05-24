@@ -16,7 +16,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    func localog() {
         babool = BaboolBoard(boardType: .localSheet(csvName: "Babool-Log"))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+            self.babool?.write(payload: DefaultPayload(title: "My Title", description: "I dont have anything to write here", category: "DEBUG"))
+        })
+    }
+    
+    func logOnGoogleSheet() {
+        babool = BaboolBoard(boardType: .googleSheet(apiPath: URL(string: "")!))
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             self.babool?.write(payload: DefaultPayload(title: "My Title", description: "I dont have anything to write here", category: "DEBUG"))
         })
