@@ -7,35 +7,8 @@
 
 import Foundation
 
-extension Collection where Element == String {
-    
-    /// Converts the collection into a single string with a custom separator
-    func joinedString(separator: String = "\n") -> String {
-        return self.joined(separator: separator)
-    }
-    
-    /// Converts the joined string into Data using UTF-8 encoding
-    func asData(separator: String = "\n") -> Data? {
-        return self.joined(separator: separator).data(using: .utf8)
-    }
-}
-
-extension TimeInterval {
-    /// Converts a UNIX timestamp (TimeInterval) to a formatted date string
-    func formattedDateString(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = .current) -> String {
-        let date = Date(timeIntervalSince1970: self)
-        return date.formattedString(format: format, timeZone: timeZone)
-    }
-}
-
-extension Date {
-    /// Converts a Date to a formatted string
-    func formattedString(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = .current) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        formatter.timeZone = timeZone
-        return formatter.string(from: self)
-    }
+struct Wrapper: Codable {
+    let data: [String: [String]]
 }
 
 class GoogleSheetManager {
@@ -52,21 +25,36 @@ class GoogleSheetManager {
         sendToBuckbeak(payload: payload)
     }
     
-    private func toData(_ data: [String]) -> Data? {
-        let d = data.joinedString()
-        return d.data(using: .utf8)
+    /*
+     As per API Contarct, JSON will look like this,
+     {
+         "data": [
+             "1748073980",
+             "error",
+             "failed_listing_api",
+             "{error: '500 Server Error'}",
+             "23-06-2025",
+             "alankaar-ios"
+         ]
+     }
+     */
+    
+    private func toData(_ dict: [String: [String]]) -> Data? {
+        let wrapper = Wrapper(data: dict)
+        if let data = try? JSONEncoder().encode(wrapper) { return data }
+        return nil
     }
     
     private func sendToBuckbeak(payload: PayloadProtocol) {
         var request = URLRequest(url: buckbeackAPI)
         request.httpMethod = "POST"
-        request.httpBody = toData([
+        request.httpBody = toData(["data": [
             payload.timestamp.formattedString(),
             payload.type,
             payload.description,
             payload.formattedDate,
             payload.client
-        ])
+        ]])
         
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             DispatchQueue.main.async {

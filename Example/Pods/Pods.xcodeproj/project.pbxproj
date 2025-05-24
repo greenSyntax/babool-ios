@@ -31,6 +31,7 @@
 		1BDA095FE7DE194DFF9A37775B65CD6D /* OIDTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE17F1C2C67CE5AD8F87A86250764BB /* OIDTokenRequest.m */; };
 		1EC9A24D26FEF0DE0DB458E677360048 /* GIDSignInButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 51D57895DDD53E61B70A443BFC6E6D80 /* GIDSignInButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FEF5AF31AB935AB02AFABE54FAEA4A9 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6432714E6D2645266380811ECB255535 /* GTMSessionFetcherService.m */; };
+		206D7B992DE25B320038622B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D7B982DE25B320038622B /* Extension.swift */; };
 		208A806E2C4BC3850018A244 /* LocalCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A80662C4BC3850018A244 /* LocalCSV.swift */; };
 		208A806F2C4BC3850018A244 /* GoogleSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A80682C4BC3850018A244 /* GoogleSheetManager.swift */; };
 		208A80702C4BC3850018A244 /* DefaultPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A806A2C4BC3850018A244 /* DefaultPayload.swift */; };
@@ -401,6 +402,7 @@
 		1E8BAD1D30D7DCF2AD7CCEC07ACDDAA3 /* Pods-babool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-babool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1EC2D70B752973768F6DA01037B88A7A /* Pods-babool_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-babool_Tests.modulemap"; sourceTree = "<group>"; };
 		1F6084FD86EF87EBB9C7C1FD02DEB5DA /* GTMAppAuth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMAppAuth-umbrella.h"; sourceTree = "<group>"; };
+		206D7B982DE25B320038622B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		208A80662C4BC3850018A244 /* LocalCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCSV.swift; sourceTree = "<group>"; };
 		208A80682C4BC3850018A244 /* GoogleSheetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSheetManager.swift; sourceTree = "<group>"; };
 		208A806A2C4BC3850018A244 /* DefaultPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPayload.swift; sourceTree = "<group>"; };
@@ -796,6 +798,7 @@
 			isa = PBXGroup;
 			children = (
 				208A80682C4BC3850018A244 /* GoogleSheetManager.swift */,
+				206D7B982DE25B320038622B /* Extension.swift */,
 			);
 			name = Utils;
 			path = babool/Classes/Utils;
@@ -2002,6 +2005,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206D7B992DE25B320038622B /* Extension.swift in Sources */,
 				208A806E2C4BC3850018A244 /* LocalCSV.swift in Sources */,
 				2601A1BA8978E193756E24D61FE2635E /* Babool.swift in Sources */,
 				208A80712C4BC3850018A244 /* PayloadProtocol.swift in Sources */,

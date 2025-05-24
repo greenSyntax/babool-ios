@@ -22,14 +22,14 @@ class ViewController: UIViewController {
     func localog() {
         babool = BaboolBoard(boardType: .localSheet(csvName: "Babool-Log"))
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.babool?.write(payload: DefaultPayload(title: "My Title", description: "I dont have anything to write here", category: "DEBUG"))
+            self.babool?.write(payload: DefaultPayload(type: "INFO", title: "HOME_VISIT", description: "{data: 'ssfdsef'}", formattedDate: "12-12-2025'T'23:33", client: "ios-alankaar"))
         })
     }
     
     func logOnGoogleSheet() {
-        babool = BaboolBoard(boardType: .googleSheet(apiPath: URL(string: "")!))
+        babool = BaboolBoard(boardType: .googleSheet(apiPath: URL(string: "https://alankaar-xhvu3.ondigitalocean.app/api/log")!))
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.babool?.write(payload: DefaultPayload(title: "My Title", description: "I dont have anything to write here", category: "DEBUG"))
+            self.babool?.write(payload: DefaultPayload(type: "INFO", title: "HOME_VISIT", description: "{data: 'ssfdsef'}", formattedDate: "12-12-2025'T'23:33", client: "ios-alankaar"))
         })
     }
 
