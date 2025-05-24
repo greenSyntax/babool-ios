@@ -39,10 +39,17 @@ pod 'Babool'
 Here, you will have a `Babool-Log` CSV in your iPhone's 'Files App.
 ```
 let babool = BaboolBoard(boardType: .localSheet(csvName: "Babool-Log"))
-babool?.write(payload: DefaultPayload(title: "My Title", description: "I dont have anything to write here", category: "DEBUG"))
+    self.babool?.write(payload: DefaultPayload(type: "INFO", title: "HOME_VISIT", description: "{data: 'ssfdsef'}", formattedDate: "12-12-2025'T'23:33", client: "ios-alankaar"))
 ```
 
-2. GoogleSheet Remote Logging - [WIP]
+2. GoogleSheet Remote Logging 
+You should have Buckbeack API path, and you're good to go for logging
+```
+babool = BaboolBoard(boardType: .googleSheet(apiPath: URL(string: "https://alankaar-xhvu3.ondigitalocean.app/api/logs")!))
+DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+    self.babool?.write(payload: DefaultPayload(type: "INFO", title: "HOME_VISIT", description: "{data: 'ssfdsef'}", formattedDate: "12-12-2025'T'23:33", client: "ios-alankaar"))
+})
+```
 
 ## Use Cases
 Debugging: Keep detailed logs of app behavior and crashes to streamline the debugging process.
