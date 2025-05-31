@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Babool'
-  s.version          = '1.0.0'
+  s.version          = '1.0.2'
   s.summary          = 'Dev Logging Tool'
   s.description      = <<-DESC
   Babool is unnessary yet very usefull tool while doing the development, you always need a
@@ -20,6 +20,4 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/greenSyntax/babool-ios', :tag => s.version.to_s }
   s.ios.deployment_target = '13.0'
   s.source_files = 'babool/Classes/**/*'
-  s.dependency 'GoogleSignIn'
-  s.dependency 'GTMSessionFetcher'
 end
